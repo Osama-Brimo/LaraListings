@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Space+Mono:wght@400;700&display=swap");
+.underline {
+  border-bottom: 3px solid;
+}
+
 .listing-tag, button {
   background-color: black;
   color: white;
@@ -146,8 +150,6 @@ a {
 
 #searchbar form {
   display: flex;
-  justify-content: flex-end;
-  flex-grow: 1;
 }
 #searchbar form input {
   width: 40%;
@@ -201,7 +203,12 @@ a {
 .listing-full .top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin: 2rem 0;
+}
+.listing-full .top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 .listing-full .listing-desc {
   font-family: "Nunito";
@@ -263,6 +270,10 @@ svg {
 
 .pagination {
   margin: 1rem 0;
+}
+
+#listingCreationForm label {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=app.css.map */

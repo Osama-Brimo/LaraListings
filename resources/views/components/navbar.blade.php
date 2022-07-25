@@ -2,12 +2,12 @@
     <div class="navbar-container">
         <div class="logo-container">
             <a href="/">
-                <img class="logo-container-logo" src="{{ url('imgs/logo.png') }}" alt="Laravel">
+                <img height="52" width="50" class="logo-container-logo" src="{{ url('imgs/logo.png') }}" alt="Laravel">
                 <span class="logo-container-name">LaraListings.</span>
             </a>
         </div>
 
-        {{-- <nav>
+        <nav>
             <ul>
                 <li>
                     <a href="/user/register">Register</a>
@@ -16,19 +16,7 @@
                     <a href="/user/login">Login</a>
                 </li>
             </ul>
-        </nav> --}}
-        <div class="searchbar-container">
-
-            @include('partials._searchbar')
-    
-    
-        </div>
+        </nav>
     </div>
 
-    {{-- <div class="searchbar-container">
-
-        @include('partials._searchbar')
-
-
-    </div> --}}
 </header>

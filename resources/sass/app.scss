@@ -2,6 +2,12 @@
 
 $laraOrange: #f05340;
 
+
+
+.underline {
+    border-bottom: 3px solid;
+}
+
 %hoverable {
     background-color: black;
     color: white;
@@ -175,12 +181,8 @@ a {
 }
 
 #searchbar form {
-    // margin-top: 2rem;
     display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
-    // position: sticky;
-    // top: 130px;
+
 
     input {
         width: 40%;
@@ -253,7 +255,13 @@ a {
     .top {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        margin: 2rem 0;
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
     }
 
     .listing-desc {
@@ -327,4 +335,10 @@ svg {
 .pagination {
     margin: 1rem 0;
 
+}
+
+#listingCreationForm {
+    label {
+        font-weight: bold;
+    }
 }

@@ -7,12 +7,14 @@
 
 <div class="listing-full">
 
+
+
     <div class="top">
         <div class="top-left">
             <h3 class="listing-title"> {{ $title }} </h3>
             <div class="listing-company-container">
                 <span>by</span>
-                <a href="#">
+                <a href="/?company={{ $company }}">
                     <h3 class="listing-company"> {{ $company }} </h3>
                 </a>
             </div>
@@ -25,12 +27,15 @@
             </div>
             <div class="listing-location-container">
                 <img src="{{ url('imgs/icons/globe.png') }}" alt="">
-                <a href="#" class="listing-location"> {{ $location }} </a>
+                <a href="/?location={{ $location }}" class="listing-location"> {{ $location }} </a>
             </div>
         </div>
         <div class="top-right">
-
-            <img class="company-logo" src="{{ $logo ? asset('storage/' . $logo) : url('imgs/default.png') }}" alt="...">
+            <a href="/listings/edit/{{ $id }}">
+                <span class="underline">Edit listing</span>
+            </a>
+            <img class="company-logo" src="{{ $logo ? asset('storage/' . $logo) : url('imgs/default.png') }}"
+                alt="...">
 
         </div>
     </div>
