@@ -33,7 +33,7 @@
             value="{{ $decideFieldValue('title') }}">
         @error('title')
             <div class="form-error">
-                <small>A job title is required.</small>
+                <small>{{ $message }}</small>
             </div>
         @enderror
     </div>
@@ -44,7 +44,7 @@
         <input placeholder="Enter your company name" type="text" name="company" value="{{ $decideFieldValue('company') }}">
         @error('company')
             <div class="form-error">
-                <small>A unique Company Name is required.</small>
+                <small>{{ $message }}</small>
             </div>
         @enderror
     </div>
@@ -60,7 +60,7 @@
         <input placeholder="Where the Job is based in" type="text" name="location" value="{{ $decideFieldValue('location') }}">
         @error('location')
             <div class="form-error">
-                <small>Job Location is required.</small>
+                <small>{{ $message }}</small>
             </div>
         @enderror
     </div>
@@ -71,7 +71,7 @@
             value="{{ $decideFieldValue('email') }}">
         @error('email')
             <div class="form-error">
-                <small>An Email is required.</small>
+                <small>{{ $message }}</small>
             </div>
         @enderror
     </div>
@@ -82,7 +82,7 @@
             value="{{ $decideFieldValue('website') }}">
         @error('website')
             <div class="form-error">
-                <small>A Company Website is required.</small>
+                <small>{{ $message }}</small>
             </div>
         @enderror
     </div>

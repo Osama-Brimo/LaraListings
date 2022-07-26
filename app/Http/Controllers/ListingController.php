@@ -40,11 +40,17 @@ class ListingController extends Controller
     public static function create()
     {
         return view('listings.create');
+
+        // if (auth()->user()) {
+        //     return view('listings.create');
+        // }
+
+        // //Store current url in session to redirect to intended page (in user controller)
+        // return redirect()->guest('/user/login')->with('message', 'Login to create listings');
     }
 
     public static function store(Request $request)
     {
-        // dd($request->file('logo'));
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],
@@ -82,12 +88,11 @@ class ListingController extends Controller
         ]);
 
         // dd(request()->all());
-        
+
         $listing->update(request()->all());
 
         $listing->save();
         return back()->with('message', 'Listing updated successfully!');
-
     }
 
     public static function destroy(Listing $listing)
