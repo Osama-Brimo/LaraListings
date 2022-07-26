@@ -70,7 +70,7 @@ Route::get('/user/register', [UserController::class, 'create'])
 
 //Store - store new user data
 Route::post('/user', [UserController::class, 'store'])
-->middleware('auth');
+->middleware('guest');
 
 //Update - update user data
 Route::put('/user/{user}', [UserController::class, 'update'])

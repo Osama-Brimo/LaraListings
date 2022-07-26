@@ -1,6 +1,6 @@
 <div class="listing">
     <div>
-        <a href="listings/{{ $id }}">
+        <a href="/listings/{{ $id }}">
             <h3 class="listing-title"> {{ $title }} </h3>
         </a>
         <div class="listing-company-container">
@@ -22,7 +22,7 @@
         </div>
     </div>
     <div>
-        <a href="listings/{{ $id }}">
+        <a href="/listings/{{ $id }}">
             <img class="company-logo" src="{{ $logo ? asset('storage/' . $logo) : url('imgs/default.png') }}"
                 alt="...">
         </a>

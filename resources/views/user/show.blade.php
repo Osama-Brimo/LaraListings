@@ -12,15 +12,26 @@
                 <ul>
                     <li><a href="/user/logout"> Logout </a></li>
                     <li>
-                        <form action="/user/{{ $user->id }}" method="POST">
+                        <form id="account-delete" action="/user/{{ $user->id }}" method="POST">
                             @method('DELETE')
                             @csrf
 
-                            <button type="submit">Delete Account</button>
                         </form>
+                        <button x-data x-on:click="document.querySelector('#account-delete').submit();">Delete Account</button>
+
+
                     </li>
                 </ul>
             </div>
         @endif
     @endauth
+
+    <div>
+        <h3>Listings by {{ $user->name }}</h3>
+        @foreach ($user->listings as $listing)
+            <x-listing :logo='$listing->logo' :id='$listing->id' :title='$listing->title' :tags="explode(',', $listing->tags)" :company='$listing->company'
+                :location='$listing->location'>
+            </x-listing>
+        @endforeach
+    </div>
 </x-layout>
