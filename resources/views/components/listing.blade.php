@@ -17,13 +17,13 @@
             @endforeach
         </div>
         <div class="listing-location-container">
-            <img src="{{ url('imgs/icons/globe.png') }}" alt="">
+            <img height="30" width="30" src="{{ url('imgs/icons/globe.png') }}" alt="">
             <a href="/?location={{ $location }}"  class="listing-location"> {{ $location }} </a>
         </div>
     </div>
     <div>
         <a href="/listings/{{ $id }}">
-            <img class="company-logo" src="{{ $logo ? asset('storage/' . $logo) : url('imgs/default.png') }}"
+            <img height="300" width="300" class="company-logo" src="{{ $logo ? asset('storage/' . $logo) : url('imgs/default.png') }}"
                 alt="...">
         </a>
     </div>

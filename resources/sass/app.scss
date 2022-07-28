@@ -3,6 +3,36 @@
 $laraOrange: #f05340;
 
 
+$spacer-lg: 5rem;
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacer-lg;
+
+    &-name {
+        margin: 0;
+    }
+
+    .account-controls {
+        display: flex;
+    }
+}
+
+#user-listing-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.user-listing {
+    position: relative;
+    margin-bottom: $spacer-lg;
+
+    .listing {
+        margin-bottom: 0;
+    }
+}
 
 .underline {
     border-bottom: 3px solid;
@@ -32,6 +62,11 @@ button {
     @extend %_button;
     padding: 1rem;
     width: fit-content;
+
+    a {
+        color: #fff !important;
+
+    }
 }
 
 %_input {
@@ -157,9 +192,8 @@ a {
         align-items: center;
 
         button {
-            padding: 10px;
+            padding: 1rem;
             width: fit-content;
-            // font-size: 18px;
             font-weight: bold;
         }
     }
@@ -178,6 +212,10 @@ a {
 
 #searchbar {
     width: 100%;
+
+    button {
+        padding: 1rem !important;
+    }
 }
 
 #searchbar form {
@@ -197,6 +235,18 @@ a {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3rem;
+
+    @media (max-width: 680px ) {
+        flex-direction: column;
+        padding: 5rem 2rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .listing-location-container {
+            justify-content: center;
+        }
+    }
 
     background-color: white;
     padding: 2rem 2rem;
@@ -341,4 +391,8 @@ svg {
     label {
         font-weight: bold;
     }
+}
+
+.filter-msg {
+    margin-bottom: 5rem;
 }

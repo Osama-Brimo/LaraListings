@@ -1,6 +1,6 @@
 <x-layout>
     
-    <h3>
+    <h3 class="filter-msg">
         {{ $filterMsg }}
     </h3>
 

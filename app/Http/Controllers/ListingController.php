@@ -40,13 +40,6 @@ class ListingController extends Controller
     public static function create()
     {
         return view('listings.create');
-
-        // if (auth()->user()) {
-        //     return view('listings.create');
-        // }
-
-        // //Store current url in session to redirect to intended page (in user controller)
-        // return redirect()->guest('/user/login')->with('message', 'Login to create listings');
     }
 
     public static function store(Request $request)
@@ -81,24 +74,28 @@ class ListingController extends Controller
 
     public static function update(Listing $listing)
     {
-
-        //check if the company name is unique, but allow the listing to use its current company name at the same time
+        //check if the company name is unique
+        //but allow the listing to use its current company name at the same time
         $formFields = request()->validate([
             'company' =>  Rule::unique('listings', 'company')->whereNot('company', $listing->company),
             'email' => 'email'
         ]);
 
-        // dd(request()->all());
+        if (request()->file('logo')) {
+            $formFields['logo'] = request()->file('logo')->store('logos', 'public');
+        }
 
-        $listing->update(request()->all());
-
+        $listing->update($formFields);
         $listing->save();
+
         return back()->with('message', 'Listing updated successfully!');
     }
 
     public static function destroy(Listing $listing)
     {
+        $afterDeleteRedirect = request()->afterAction;
+        $redirectURL = $afterDeleteRedirect ? $afterDeleteRedirect : '/';
         $listing->delete();
-        return redirect('/')->with('message', 'Listing deleted successfully!');
+        return redirect($redirectURL)->with('message', 'Listing deleted successfully!');
     }
 }

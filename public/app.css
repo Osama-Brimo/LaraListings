@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Space+Mono:wght@400;700&display=swap");
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+.user-info-name {
+  margin: 0;
+}
+.user-info .account-controls {
+  display: flex;
+}
+
+#user-listing-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.user-listing {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.user-listing .listing {
+  margin-bottom: 0;
+}
+
 .underline {
   border-bottom: 3px solid;
 }
@@ -23,6 +49,9 @@ button {
 button {
   padding: 1rem;
   width: fit-content;
+}
+button a {
+  color: #fff !important;
 }
 
 input {
@@ -129,7 +158,7 @@ a {
   align-items: center;
 }
 #footer .footer-content button {
-  padding: 10px;
+  padding: 1rem;
   width: fit-content;
   font-weight: bold;
 }
@@ -147,6 +176,9 @@ a {
 #searchbar {
   width: 100%;
 }
+#searchbar button {
+  padding: 1rem !important;
+}
 
 #searchbar form {
   display: flex;
@@ -163,6 +195,18 @@ a {
   margin-bottom: 3rem;
   background-color: white;
   padding: 2rem 2rem;
+}
+@media (max-width: 680px) {
+  .listing {
+    flex-direction: column;
+    padding: 5rem 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .listing .listing-location-container {
+    justify-content: center;
+  }
 }
 .listing h3 {
   margin: 0;
@@ -274,6 +318,10 @@ svg {
 
 #listingCreationForm label {
   font-weight: bold;
+}
+
+.filter-msg {
+  margin-bottom: 5rem;
 }
 
 /*# sourceMappingURL=app.css.map */

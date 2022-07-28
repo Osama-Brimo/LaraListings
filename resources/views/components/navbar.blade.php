@@ -4,7 +4,7 @@
             <a href="/">
                 <img height="52" width="50" class="logo-container-logo" src="{{ url('imgs/logo.png') }}"
                     alt="Laravel">
-                <span class="logo-container-name">LaraListings.</span>
+                <span class="logo-container-name">LaraListings</span>
             </a>
         </div>
 
